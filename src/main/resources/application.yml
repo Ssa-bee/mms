@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: mms
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=UTC
+    username: root
+    password: dud12dlr#$
+    driver-class-name: com.mysql.cj.jdbc.Driver
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath:mapper/user/*.xml
+    - classpath:mapper/order/*.xml
+  type-aliases-package: iptv.mms.entity
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    iptv.mms.mapper: DEBUG          # 패키지.클래스명: 로그레벨
+    org.springframework.jdbc: DEBUG  # 패키지명: 로그레벨
+    root: INFO                      # 루트 로거 레벨
